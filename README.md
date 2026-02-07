@@ -28,6 +28,47 @@ cd tmux-config
 ./install.sh --help          # Show help
 ```
 
+## Basic Usage
+
+### Starting tmux
+
+```bash
+tmux                          # Start new session with auto-generated name
+tmux new -s mysession         # Start new session named "mysession"
+tmux new -s work -n editor    # Start session "work" with first window named "editor"
+```
+
+### Attaching to Sessions
+
+```bash
+tmux ls                       # List all sessions
+tmux attach                   # Attach to last session
+tmux attach -t mysession      # Attach to specific session "mysession"
+tmux a -t mysession           # Short form of attach
+```
+
+### Detaching and Killing Sessions
+
+```bash
+# Inside tmux:
+prefix + d                    # Detach from current session
+
+# From terminal:
+tmux detach                   # Detach from current session
+tmux kill-session -t mysession # Kill specific session
+tmux kill-server              # Kill all sessions
+```
+
+### Session Management
+
+```bash
+# Inside tmux:
+prefix + s                    # Show session list (interactive)
+prefix + $                    # Rename current session
+prefix + (                    # Switch to previous session
+prefix + )                    # Switch to next session
+```
+
 ## Included Plugins
 
 | Plugin | Description |
